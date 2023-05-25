@@ -1,0 +1,11 @@
+name: Check-EditorConfig
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: go install github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest
+      - run: ec
